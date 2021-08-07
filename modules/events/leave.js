@@ -17,14 +17,14 @@ module.exports.run = async function({ api, event, Users, Threads }) {
 	const { threadID } = event;
 	const data = global.data.threadData.get(parseInt(threadID)) || (await Threads.getData(threadID)).data;
 	const name = global.data.userName.get(event.logMessageData.leftParticipantFbId) || await Users.getNameUser(event.logMessageData.leftParticipantFbId);
-	const type = (event.author == event.logMessageData.leftParticipantFbId) ? "tự rời" : "bị quản trị viên muda khỏi nhóm";
+	const type = (event.author == event.logMessageData.leftParticipantFbId) ? "tự rời" : "bị quản trị viên sút ra khỏi nhóm";
 	const path = join(__dirname, "cache", "leaveGif");
 	const gifPath = join(path, `outbox.gif`);
 	var msg, formPush
 	
 	if (existsSync(path)) mkdirSync(path, { recursive: true });
 
-	(typeof data.customLeave == "undefined") ? msg = "Con vợ {name} đã chán box nên {type} khỏi nhóm có 1 0 2 này. See You Again❤" : msg = data.customLeave;
+	(typeof data.customLeave == "undefined") ? msg = "Bé {name} đã chán box nên {type} khỏi nhóm mất tiu òi :< " : msg = data.customLeave;
 	msg = msg.replace(/\{name}/g, name).replace(/\{type}/g, type);
 
 	if (existsSync(gifPath)) formPush = { body: msg, attachment: createReadStream(gifPath) }
