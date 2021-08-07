@@ -2,7 +2,7 @@
 	name: "ad",
 	version: "1.0.0",
 	hasPermssion: 0,
-	credits: "Hà Mạc Trường Giang",
+	credits: "dang le quang",
 	description: "Thông tin về admin",
 	commandCategory: "Thông tin về admin",
 	cooldowns: 0
