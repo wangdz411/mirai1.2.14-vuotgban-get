@@ -39,5 +39,5 @@ let isFriend = data1[mention].isFriend == false ? "Chưa kết bạn với 
   	return request(encodeURI(`https://graph.facebook.com/${mention}/picture?width=512&height=512&access_token=170918394587449|sONjQBBNs316xVD31T-yuL4jfyc`)).pipe(fs.createWriteStream(__dirname+'/cache/2.png')).on('close',() => callback());
 
 	}
-	else api.sendMessage("cút", event.threadID);
+	else api.sendMessage("xài đc đâu mà ghi hihi", event.threadID);
 }
