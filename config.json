@@ -10,10 +10,10 @@
     "EMAIL": "",
     "PASSWORD": "",
     "OTPKEY": "",
-    "BOTNAME": "TRƯỜNG GIANG BOT",
-    "PREFIX": ".",
+    "BOTNAME": "UwU",
+    "PREFIX": "/",
     "ADMINBOT": [
-        "626463485"
+        "100025179948501"
     ],
     "DATABASE": {
         "sqlite": {
