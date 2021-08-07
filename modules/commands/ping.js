@@ -16,7 +16,7 @@ module.exports.run = async function({ api, event, args }) {
 		global.moduleData["afk"] && global.moduleData["afk"].afkList ? listAFK = Object.keys(global.moduleData["afk"].afkList || []) : listAFK = []; 
 		listUserID = event.participantIDs.filter(ID => ID != botID && ID != event.senderID);
 		listUserID = listUserID.filter(item => !listAFK.includes(item));
-		var body = (args.length != 0) ? args.join(" ") : "Vác cái đít vào box lẹ lên mấy bé ơi", mentions = [], index = 0;
+		var body = (args.length != 0) ? args.join(" ") : "Vào box đi có người kêu nè🥺🥺", mentions = [], index = 0;
 		
 		for(const idUser of listUserID) {
 			body = "‎" + body;
