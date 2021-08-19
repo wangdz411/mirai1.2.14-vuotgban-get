@@ -1,17 +1,230 @@
 module.exports.config = {
-	name: "gỡ",
-	version: "1.0.0", 
-	hasPermssion: 0,
-	credits: "HungCatMoi",
-	description: "Gỡ tin nhắn của Bot",
-	commandCategory: "System", 
-	usages: "gỡ", 
-	cooldowns: 0,
-	dependencies: [] 
-};
+    name: "chetmemay",
+    version: "1.0.0",
+    hasPermssion: 1,
+    credits: "WangProZip",
+    description: "Anh địt chết con mẹ mày\nĐụ má mày",
+    commandCategory: "group",
+    usages: "chetmemay @mention",
+    cooldowns: 10,
+    dependencies: {
+        "fs-extra": "",
+        "axios": ""
+    }
+}
 
-module.exports.run = async function({ api, event, args, Users }) {
-	if (event.messageReply.senderID != api.getCurrentUserID()) return api.sendMessage(getText('unsendErr1'), event.threadID, event.messageID);
-			if (event.type != "message_reply") return api.sendMessage(getText('unsendErr2'), event.threadID, event.messageID);
-			return api.unsendMessage(event.messageReply.messageID, err => (err) ? api.sendMessage(getText('error'), event.threadID, event.messageID) : '');
-		}
+module.exports.run = async function({ api, args, Users, event}) {
+    var mention = Object.keys(event.mentions)[0];
+    if(!mention) return api.sendMessage("tuổi gì mà xài hả em", event.threadID);
+    let data = await api.getUserInfo(mention);
+    let name = data[parseInt(mention)].name;
+    var arraytag = [];
+        arraytag.push({id: mention, tag: name});
+    var a = function (a) { api.sendMessage(a, event.threadID); }
+a("Ey dzooo !");
+setTimeout(() => {a({body: "anh" + " " + name, mentions: arraytag})}, 1000);
+setTimeout(() => {a({body: "địt" + " " + name, mentions: arraytag})}, 2000);
+setTimeout(() => {a({body: "chết" + " " + name, mentions: arraytag})}, 3000);
+setTimeout(() => {a({body: "con" + " " + name, mentions: arraytag})}, 4000);
+setTimeout(() => {a({body: "đĩ" + " " + name, mentions: arraytag})}, 5000);
+setTimeout(() => {a({body: "mẹ" + " " + name, mentions: arraytag})}, 6000);
+setTimeout(() => {a({body: "mày" + " " + name, mentions: arraytag})}, 7000);
+setTimeout(() => {a({body: "nè" + " " + name, mentions: arraytag})}, 8000);
+setTimeout(() => {a({body: "em" + " " + name, mentions: arraytag})}, 9000);
+setTimeout(() => {a({body: "ơi" + " " + name, mentions: arraytag})}, 10000);
+setTimeout(() => {a({body: "con" + " " + name, mentions: arraytag})}, 11000);
+setTimeout(() => {a({body: "cặc" + " " + name, mentions: arraytag})}, 12000);
+setTimeout(() => {a({body: "anh" + " " + name, mentions: arraytag})}, 13000);
+setTimeout(() => {a({body: "siêu" + " " + name, mentions: arraytag})}, 14000);
+setTimeout(() => {a({body: "to" + " " + name, mentions: arraytag})}, 15000);
+setTimeout(() => {a({body: "khổng" + " " + name, mentions: arraytag})}, 16000);
+setTimeout(() => {a({body: "lồ" + " " + name, mentions: arraytag})}, 17000);
+setTimeout(() => {a({body: "bự" + " " + name, mentions: arraytag})}, 18000);
+setTimeout(() => {a({body: "tổ" + " " + name, mentions: arraytag})}, 19000);
+setTimeout(() => {a({body: "chảng" + " " + name, mentions: arraytag})}, 20000);
+setTimeout(() => {a({body: "vả" + " " + name, mentions: arraytag})}, 21000);
+setTimeout(() => {a({body: "cái" + " " + name, mentions: arraytag})}, 22000);
+setTimeout(() => {a({body: "là" + " " + name, mentions: arraytag})}, 23000);
+setTimeout(() => {a({body: "mày" + " " + name, mentions: arraytag})}, 24000);
+setTimeout(() => {a({body: "ngủm" + " " + name, mentions: arraytag})}, 25000);
+setTimeout(() => {a({body: "con" + " " + name, mentions: arraytag})}, 26000);
+setTimeout(() => {a({body: "mẹ" + " " + name, mentions: arraytag})}, 27000);
+setTimeout(() => {a({body: "mày" + " " + name, mentions: arraytag})}, 28000); 
+setTimeout(() => {a({body: "luôn" + " " + name, mentions: arraytag})}, 29000);
+setTimeout(() => {a({body: "đó" + " " + name, mentions: arraytag})}, 30000);
+setTimeout(() => {a({body: "con" + " " + name, mentions: arraytag})}, 31000);
+setTimeout(() => {a({body: "chó" + " " + name, mentions: arraytag})}, 32000);
+setTimeout(() => {a({body: "ngu" + " " + name, mentions: arraytag})}, 33000);
+setTimeout(() => {a({body: "ơi" + " " + name, mentions: arraytag})}, 34000);
+setTimeout(() => {a({body: "địt" + " " + name, mentions: arraytag})}, 35000);
+setTimeout(() => {a({body: "con" + " " + name, mentions: arraytag})}, 36000);
+setTimeout(() => {a({body: "chị" + " " + name, mentions: arraytag})}, 37000);
+setTimeout(() => {a({body: "mày" + " " + name, mentions: arraytag})}, 38000);
+setTimeout(() => {a({body: "anh" + " " + name, mentions: arraytag})}, 39000);
+setTimeout(() => {a({body: "đây" + " " + name, mentions: arraytag})}, 40000);
+setTimeout(() => {a({body: "sút" + " " + name, mentions: arraytag})}, 41000);
+setTimeout(() => {a({body: "vào" + " " + name, mentions: arraytag})}, 42000);
+setTimeout(() => {a({body: "mõm" + " " + name, mentions: arraytag})}, 43000);
+setTimeout(() => {a({body: "mày" + " " + name, mentions: arraytag})}, 44000);
+setTimeout(() => {a({body: "bóp" + " " + name, mentions: arraytag})}, 45000);
+setTimeout(() => {a({body: "bóp" + " " + name, mentions: arraytag})}, 46000);
+setTimeout(() => {a({body: "để" + " " + name, mentions: arraytag})}, 47000);
+setTimeout(() => {a({body: "mày" + " " + name, mentions: arraytag})}, 48000);
+setTimeout(() => {a({body: "tỉnh" + " " + name, mentions: arraytag})}, 490000);
+setTimeout(() => {a({body: "lại" + " " + name, mentions: arraytag})}, 50000);
+setTimeout(() => {a({body: "nè" + " " + name, mentions: arraytag})}, 51000);
+setTimeout(() => {a({body: "con" + " " + name, mentions: arraytag})}, 52000);
+setTimeout(() => {a({body: "chó" + " " + name, mentions: arraytag})}, 53000);
+setTimeout(() => {a({body: "ngu" + " " + name, mentions: arraytag})}, 54000);
+setTimeout(() => {a({body: "lồn" + " " + name, mentions: arraytag})}, 55000);
+setTimeout(() => {a({body: "ơi" + " " + name, mentions: arraytag})}, 56000);
+setTimeout(() => {a({body: "hi" + " " + name, mentions: arraytag})}, 57000);
+setTimeout(() => {a({body: "hi" + " " + name, mentions: arraytag})}, 58000);
+setTimeout(() => {a({body: "chết" + " " + name, mentions: arraytag})}, 59000);
+setTimeout(() => {a({body: "con" + " " + name, mentions: arraytag})}, 60000);
+setTimeout(() => {a({body: "mẹ" + " " + name, mentions: arraytag})}, 70000);
+setTimeout(() => {a({body: "mày" + " " + name, mentions: arraytag})}, 71000);
+setTimeout(() => {a({body: "chưa" + " " + name, mentions: arraytag})}, 72000);
+setTimeout(() => {a({body: "haha" + " " + name, mentions: arraytag})}, 73000);
+setTimeout(() => {a({body: "chết" + " " + name, mentions: arraytag})}, 74000);
+setTimeout(() => {a({body: "mẹ" + " " + name, mentions: arraytag})}, 75000);
+setTimeout(() => {a({body: "mày" + " " + name, mentions: arraytag})}, 76000);
+setTimeout(() => {a({body: "con" + " " + name, mentions: arraytag})}, 77000);
+setTimeout(() => {a({body: "ngu" + " " + name, mentions: arraytag})}, 78000);
+setTimeout(() => {a({body: "lồn" + " " + name, mentions: arraytag})}, 79000);
+setTimeout(() => {a({body: "ơi" + " " + name, mentions: arraytag})}, 80000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 81000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 82000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 83000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 84000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 85000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 86000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 87000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 88000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 89000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 90000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 100000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 101000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 102000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 103000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 104000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 105000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 106000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 107000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 108000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 109000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 110000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 111000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 112000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 113000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 114000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 115000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 116000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 117000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 118000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 119000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 120000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 121000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 122000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 123000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 124000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 125000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 126000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 127000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 128000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 129000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 130000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 131000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 132000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 133000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 134000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 135000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 136000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 137000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 138000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 139000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 140000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 141000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 142000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 143000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 144000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 145000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 146000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 147000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 148000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 149000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 150000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 151000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 152000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 153000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 154000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 155000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 156000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 157000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 158000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 159000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 160000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 161000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 162000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 163000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 164000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 165000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 166000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 167000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 168000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 169000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 170000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 171000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 172000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 173000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 174000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 175000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 176000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 177000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 178000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 179000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 180000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 181000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 182000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 183000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 184000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 185000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 186000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 187000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 188000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 189000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 190000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 191000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 192000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 193000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 194000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 195000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 196000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 197000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 198000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 199000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 200000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 201000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 202000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 203000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 204000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 205000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 206000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 207000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 208000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 209000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 210000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 211000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 212000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 213000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 214000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 215000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 216000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 217000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 218000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 219000);
+setTimeout(() => {a({body: "ngu lồn lắm em ơi" + " " + name, mentions: arraytag})}, 220000);
+setTimeout(() => {a ("Ngu lắm thằng em")} , 230000);
+
+
+}
