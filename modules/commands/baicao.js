@@ -17,7 +17,7 @@ module.exports.handleEvent = async ({ event, api, Users, Currencies }) => {
 	var values = global.moduleData.baicao.get(threadID);
 	if (values.start != 1) return;
 
-	if (body.indexOf("Chia bài") == 0) {
+	if (body.indexOf("Chia") == 0) {
 		if (values.chiabai == 1) return;
 		for(var i = 0; i < values.player.length; i++) {
 			const card1 = Math.floor(Math.random() * (9 - 1 + 1)) + 1;
@@ -37,7 +37,7 @@ module.exports.handleEvent = async ({ event, api, Users, Currencies }) => {
 		return api.sendMessage("Bài đã được chia thành công! tất cả mọi người đều có 2 lượt đổi bài nêú không thâý bài hãy kiểm tra lại tin nhắn chờ", threadID);
 	}
 
-	if (body.indexOf("Đổi bài") == 0) {
+	if (body.indexOf("Đổi") == 0) {
 		if (values.chiabai != 1) return;
 		var player = values.player.find(item => item.id == senderID);
 		if (player.doibai == 0) return api.sendMessage("Bạn đã sử dụng toàn bộ lượt đổi bài", threadID, messageID);
@@ -52,7 +52,7 @@ module.exports.handleEvent = async ({ event, api, Users, Currencies }) => {
 		return api.sendMessage(`Bài của bạn sau khi được đổi: ${player.card1} | ${player.card2} | ${player.card3} \n\nTổng bài của bạn: ${player.tong}`, player.id);
 	}
 
-	if (body.indexOf("Ready") == 0) {
+	if (body.indexOf("Xong") == 0) {
 		if (values.chiabai != 1) return;
 		const player = values.player.find(item => item.id == senderID);
 		if (player.ready == true) return;
@@ -102,7 +102,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 	if (!global.moduleData.baicao) global.moduleData.baicao = new Map();
 	var values = global.moduleData.baicao.get(threadID) || {};
 
-	if (args[0] == "create") {
+	if (args[0] == "tạo") {
 		if (global.moduleData.baicao.has(threadID)) return api.sendMessage("Hiện tại nhóm này đang có bàn bài cào đang được mở", threadID, messageID);
 		if (!args[1] || isNaN(args[1]) || parseInt(args[1]) <= 1) return api.sendMessage("Mức đặt cược của bạn không phải là một con số hoặc mức đặt cược của bạn bé hơn 1$", threadID, messageID);
 		
@@ -115,7 +115,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 		return api.sendMessage("Bàn bài cào của bạn đã được tạo thành công!, để tham gia bạn hãy nhập baicao join", threadID, messageID);
 	}
 
-	else if (args[0] == "join") {
+	else if (args[0] == "vào") {
 		if (!values) return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
 		if (values.start == 1) return api.sendMessage("Hiện tại bàn bài cào đã được bắt đầu", threadID, messageID);
 		
@@ -139,7 +139,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 		, threadID, messageID);
 	}
 
-	else if (args[0] == "leave") {
+	else if (args[0] == "vào") {
 		if (typeof values.player == "undefined") return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
 		if (!values.player.some(item => item.id == senderID)) return api.sendMessage("Bạn chưa tham gia vào bàn bài cào trong nhóm này!", threadID, messageID);
 		if (values.start == 1) return api.sendMessage("Hiện tại bàn bài cào đã được bắt đầu", threadID, messageID);
@@ -167,7 +167,7 @@ module.exports.run = async ({ api, event, args, Currencies }) => {
 		return;
 	}
 
-	else if (args[0] == "start" && values.author == senderID) {
+	else if (args[0] == "bắt đầu" && values.author == senderID) {
 		if (!values) return api.sendMessage("Hiện tại chưa có bàn bài cào nào, bạn có thể tạo bằng cách sử dụng baicao create", threadID, messageID);
 		if (values.player.length <= 1) return api.sendMessage("Hiện tại bàn của bạn không có người chơi nào tham gia, bạn có thể mời người đấy tham gia bằng cách yêu cầu người chơi khác nhập baicao join", threadID, messageID);
 		if (values.start == 1) return api.sendMessage("Hiện tại bàn đã được bắt đầu bởi chủ bàn", threadID, messageID);
